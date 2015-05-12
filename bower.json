@@ -1,0 +1,13 @@
+{
+  "name": "tweet-splitter",
+  "version": "0.0.1",
+  "authors": [
+    "dburgos <hola@davidburgosonline.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://dburgos.github.io/tweet-splitter",
+  "dependencies": {
+    "react": "~0.13.3"
+  }
+}
