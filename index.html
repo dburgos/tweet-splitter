@@ -2,8 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tweet Splitter</title>
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <script src="./bower_components/react/react.min.js"></script>
     <script src="./bower_components/react/JSXTransformer.js"></script>
     <script src="./js/vendor/twitter.js"></script>
@@ -11,8 +13,15 @@
     <script type="text/jsx" src="./js/components/tweetTextarea.jsx"></script>
     <script type="text/jsx" src="./js/components/tweetList.jsx"></script>
   </head>
-  <body>
-    <div id="input"></div>
-    <div id="tweets"></div>
+  <body class="container">
+    <aside class="col-xs-12 col-md-6">
+      <h1>Tweet Splitter</h1>
+      <h4>Open source tool by @daburix</h4>
+      <p>Write or paste your large text and get your splitted tweets ready to post</p>
+      <div id="input"></div>
+    </aside>
+    <section class="col-xs-12 col-md-6">
+      <div id="tweets"></div>
+    </section>
   </body>
 </script>
