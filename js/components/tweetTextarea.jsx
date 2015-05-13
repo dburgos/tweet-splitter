@@ -8,6 +8,7 @@ var TweetTextarea = React.createClass({
 
   handleChange: function(e) {
     EventSystem.publish('input.text.change', e.target.value);
+    this.setState({ value: e.target.value });
   },
 
   render: function() {
