@@ -2,6 +2,7 @@
 var TweetList = React.createClass({
   getInitialState: function() {
     return {
+      tweetLength: 140,
       data: {
         tweets: []
       }
@@ -24,7 +25,6 @@ var TweetList = React.createClass({
         }
       });
     })
-
   },
 
   generateTweets: function(text, callback) {
@@ -32,9 +32,9 @@ var TweetList = React.createClass({
     for(var i=1; text.length != 0; i++) {
       output.push({
         id: i,
-        text: text.substr(0, 140)
+        text: text.substr(0, this.state.tweetLength).trim()
       });
-      text = text.substr(141);
+      text = text.substr(this.state.tweetLength);
     }
     callback(null, output);
   },
