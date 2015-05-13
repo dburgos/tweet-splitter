@@ -24,7 +24,7 @@ var TweetList = React.createClass({
           tweets: tweets
         }
       });
-    })
+    });
   },
 
   generateTweets: function(text, callback) {
@@ -47,7 +47,13 @@ var TweetList = React.createClass({
         return <ul className="tweets">
             {
               data.tweets.map(function(tweet) {
-                return <li key={tweet.id}>{tweet.text}</li>
+                return <li key={tweet.id}>
+                          {tweet.text}
+                          <a href={"https://twitter.com/intent/tweet?text="+tweet.text}
+                              class="twitter-share-button"
+                              data-size="large"
+                              data-count="none">Tweet</a>
+                        </li>
               })
             }
           </ul>
