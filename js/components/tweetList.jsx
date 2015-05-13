@@ -30,11 +30,28 @@ var TweetList = React.createClass({
   generateTweets: function(text, callback) {
     var output = [];
     for(var i=1; text.length != 0; i++) {
+      // Set the max length
+      var splitPosition = this.state.tweetLength;
+
+      // If text is larger than a tweet,
+      // Don't cut a word
+      var isCutting = text.length > this.state.tweetLength;
+      if(isCutting) {
+        var hasWords = text.split(' ').length > 2;
+        if (hasWords) {
+          // Find the last space
+          splitPosition = text.substr(0, splitPosition).lastIndexOf(' ');
+        }
+      }
+
+      // Save the tweet
       output.push({
         id: i,
-        text: text.substr(0, this.state.tweetLength).trim()
+        text: text.substr(0, splitPosition).trim()
       });
-      text = text.substr(this.state.tweetLength);
+
+      // Cut
+      text = text.substr(splitPosition);
     }
     callback(null, output);
   },
