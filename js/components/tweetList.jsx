@@ -65,8 +65,9 @@ var TweetList = React.createClass({
             {
               data.tweets.map(function(tweet) {
                 return <li key={tweet.id} className="list-group-item">
+                          <h1>{tweet.id}</h1>
                           <span className="pull-left">{tweet.text}</span>
-                          <a href={"https://twitter.com/intent/tweet?text="+tweet.text}
+                          <a href={"https://twitter.com/intent/tweet?text="+encodeURIComponent(tweet.text)}
                               className="twitter-share-button pull-right"
                               data-size="large"
                               data-count="none">Tweet</a>
