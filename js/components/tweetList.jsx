@@ -12,14 +12,31 @@ var TweetList = React.createClass({
     EventSystem.subscribe('input.text.change', this.updateList);
   },
 
-  updateList: function() {
-    this.setState({
-      data: {
-        tweets: [
-          // TODO
-        ]
+  updateList: function(text) {
+    var self = this;
+    self.generateTweets(text, function(err, tweets) {
+      if(err) {
+        tweets = [];
       }
-    });
+      self.setState({
+        data: {
+          tweets: tweets
+        }
+      });
+    })
+
+  },
+
+  generateTweets: function(text, callback) {
+    var output = [];
+    for(var i=1; text.length != 0; i++) {
+      output.push({
+        id: i,
+        text: text.substr(0, 140)
+      });
+      text = text.substr(141);
+    }
+    callback(null, output);
   },
 
   render: function() {
