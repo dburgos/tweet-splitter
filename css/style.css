@@ -5,7 +5,7 @@ textarea {
 }
 
 #tweets {
-	padding-top: 5rem;
+	padding-top: 8rem;
 }
 
 #tweets ul {
@@ -17,6 +17,16 @@ textarea {
 	display: table;
 	width: 100%;
 	margin-bottom: 2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+#tweets h1 {
+	position: absolute;
+	font-size: 13rem;
+	top: -5rem;
+	left: 0;
+	opacity: .2;
 }
 
 a.twitter-share-button,
