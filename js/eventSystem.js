@@ -15,9 +15,9 @@ var EventSystem = (function() {
         return false;
       }
 
-      while(queue.length > 0) {
-        (queue.shift())(data);
-      }
+      queue.map(function( method ) {
+        (method)(data);
+      });
 
       return true;
     },
