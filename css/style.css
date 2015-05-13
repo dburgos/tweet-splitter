@@ -5,7 +5,7 @@ textarea {
 }
 
 #tweets {
-	padding-top: 8rem;
+	margin-top: 2rem;
 }
 
 #tweets ul {
@@ -27,6 +27,12 @@ textarea {
 	top: -5rem;
 	left: 0;
 	opacity: .2;
+}
+
+@media screen and (min-width: 991px) {
+  #tweets {
+		margin-top: 14rem;
+	}
 }
 
 a.twitter-share-button,
