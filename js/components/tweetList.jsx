@@ -3,6 +3,7 @@ var TweetList = React.createClass({
   getInitialState: function() {
     return {
       tweetLength: 140,
+      numberSplit: ") ",
       params: {
         text: "",
         showNumber: false
@@ -19,9 +20,6 @@ var TweetList = React.createClass({
   },
 
   updateParams: function(params) {
-    // this.setState({
-    //   params[params.key]: params.value
-    // });
     this.state.params[params.key] = params.value;
     this.updateList();
   },
@@ -47,9 +45,9 @@ var TweetList = React.createClass({
       // Set the max length
       var splitPosition = this.state.tweetLength;
 
-      // If show number, keep in mind its length and a space
+      // If show number, keep in mind its length and the split length
       if(this.state.params.showNumber) {
-        splitPosition -= i.toString().length + 1;
+        splitPosition -= i.toString().length + this.state.numberSplit.length;
       }
 
       // If text is larger than a tweet,
@@ -67,7 +65,7 @@ var TweetList = React.createClass({
       var tweetText = text.substr(0, splitPosition).trim();
 
       if(this.state.params.showNumber) {
-        tweetText += " "+i;
+        tweetText = i + this.state.numberSplit + tweetText;
       }
 
       // Save the tweet
