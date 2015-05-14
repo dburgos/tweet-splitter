@@ -19,6 +19,7 @@ textarea {
   margin-bottom: 2rem;
   position: relative;
   overflow: hidden;
+  min-height: 8.7rem;
 }
 
 #tweets h1 {
