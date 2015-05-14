@@ -12,5 +12,5 @@ http://dburgos.github.io/tweet-splitter/
 - Written with ReactJS + JSX
 
 ## Screenshot
-![Tweet Splitter Screenshot](http://s28.postimg.org/6kozyylq5/Captura_de_pantalla_2015_05_13_15_03_37.png)
+![Tweet Splitter Screenshot](http://s13.postimg.org/qn8xaev1j/Captura_de_pantalla_2015_05_14_15_53_04.png)
 
