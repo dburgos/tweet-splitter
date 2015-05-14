@@ -23,9 +23,9 @@ textarea {
 
 #tweets h1 {
   position: absolute;
-  font-size: 13rem;
-  top: -5rem;
-  left: 0;
+  font-size: 12rem;
+  top: -4.6rem;
+  left: -0.4rem;
   opacity: .2;
 }
 
