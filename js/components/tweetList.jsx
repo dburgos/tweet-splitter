@@ -3,6 +3,10 @@ var TweetList = React.createClass({
   getInitialState: function() {
     return {
       tweetLength: 140,
+      params: {
+        text: "",
+        showNumber: false
+      },
       data: {
         tweets: []
       }
@@ -10,12 +14,21 @@ var TweetList = React.createClass({
   },
 
   componentDidMount: function() {
-    EventSystem.subscribe('input.text.change', this.updateList);
+    EventSystem.subscribe('input.text.change', this.updateParams);
+    EventSystem.subscribe('input.check.show', this.updateParams);
   },
 
-  updateList: function(text) {
+  updateParams: function(params) {
+    // this.setState({
+    //   params[params.key]: params.value
+    // });
+    this.state.params[params.key] = params.value;
+    this.updateList();
+  },
+
+  updateList: function() {
     var self = this;
-    self.generateTweets(text, function(err, tweets) {
+    self.generateTweets(function(err, tweets) {
       if(err) {
         tweets = [];
       }
@@ -27,11 +40,17 @@ var TweetList = React.createClass({
     });
   },
 
-  generateTweets: function(text, callback) {
+  generateTweets: function(callback) {
     var output = [];
+    var text   = this.state.params.text;
     for(var i=1; text.length != 0; i++) {
       // Set the max length
       var splitPosition = this.state.tweetLength;
+
+      // If show number, keep in mind its length and a space
+      if(this.state.params.showNumber) {
+        splitPosition -= i.toString().length + 1;
+      }
 
       // If text is larger than a tweet,
       // Don't cut a word
@@ -44,10 +63,17 @@ var TweetList = React.createClass({
         }
       }
 
+      // Compose tweet text
+      var tweetText = text.substr(0, splitPosition).trim();
+
+      if(this.state.params.showNumber) {
+        tweetText += " "+i;
+      }
+
       // Save the tweet
       output.push({
         id: i,
-        text: text.substr(0, splitPosition).trim()
+        text: tweetText
       });
 
       // Cut
