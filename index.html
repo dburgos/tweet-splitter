@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tweet Splitter</title>
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/twitter.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
   </head>
   <body class="container">
@@ -15,6 +16,7 @@
       </h4>
       <p>Write or paste your large text and get your splitted tweets ready to post</p>
       <div id="input"></div>
+      <fieldset id="options"></fieldset>
     </aside>
     <section class="col-xs-12 col-md-6">
       <div id="tweets"></div>
@@ -24,7 +26,8 @@
     <script src="./bower_components/react/react.js"></script>
     <script src="./js/vendor/twitter.js"></script>
     <script src="./js/vendor/eventSystem.js"></script>
-    <script src="./build/tweetTextarea.js"></script>
-    <script src="./build/tweetList.js"></script>
+    <script src="./build/components/tweetTextarea.js"></script>
+    <script src="./build/components/checkTweetNumber.js"></script>
+    <script src="./build/components/tweetList.js"></script>
   </body>
 </script>

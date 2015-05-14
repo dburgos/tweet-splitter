@@ -1,7 +1,7 @@
 textarea {
-	width: 100%;
-	height:25vh;
-	padding: 1rem;
+  width: 100%;
+  height:25vh;
+  padding: 1rem;
 }
 
 #tweets {
@@ -9,59 +9,33 @@ textarea {
 }
 
 #tweets ul {
-	padding-left: 0;
+  padding-left: 0;
 }
 
 #tweets li {
-	list-style: none;
-	display: table;
-	width: 100%;
-	margin-bottom: 2rem;
-	position: relative;
-	overflow: hidden;
+  list-style: none;
+  display: table;
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 8.7rem;
 }
 
 #tweets h1 {
-	position: absolute;
-	font-size: 13rem;
-	top: -5rem;
-	left: 0;
-	opacity: .2;
+  position: absolute;
+  font-size: 12rem;
+  top: -4.6rem;
+  left: -0.4rem;
+  opacity: .2;
+}
+
+.checkbox {
+  margin-left: 2rem;
 }
 
 @media screen and (min-width: 991px) {
   #tweets {
-		margin-top: 14rem;
-	}
-}
-
-a.twitter-share-button,
-a.twitter-mention-button,
-a.twitter-hashtag-button {
-	margin-top: .5rem;
-  display: inline-block;
-  padding: 1px 3px 0 19px;
-  border: #ccc solid 1px;
-  border-radius: 3px;
-  background: #f8f8f8 url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat;
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
-              -webkit-linear-gradient(#fff, #dedede);
-  background: url(//platform.twitter.com/images/bird.png) 2px 3px no-repeat,
-              linear-gradient(#fff, #dedede);
-  background-size: 16px 13px, auto auto;
-
-  /* Text */
-   font: bold 11px/17px Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  color: #333;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-  white-space: nowrap;
-}
-
-/* Color Highlight for keyboard navigation */
-a.twitter-share-button:focus,
-a.twitter-mention-button:focus,
-a.twitter-hashtag-button:focus {
-  outline: none;
-  border-color: #0089cb;
+    margin-top: 14rem;
+  }
 }
