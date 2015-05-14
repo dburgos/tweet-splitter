@@ -9,6 +9,7 @@ http://dburgos.github.io/tweet-splitter/
 - No length limits
 - Get automatically the tweet list
 - You can tweet each one with its Twitter button
+- Show tweet numbers (optional)
 - Written with ReactJS + JSX
 
 ## Screenshot
