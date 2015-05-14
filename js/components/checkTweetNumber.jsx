@@ -20,7 +20,7 @@ var CheckTweetNumber = React.createClass({
                 type="checkbox"
                 checked={this.state.checked}
                 onChange={this.handleChange} />
-              <span>Show tweet number</span>
+              <span>Show tweet numbers</span>
             </label>;
   }
 });
